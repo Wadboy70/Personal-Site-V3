@@ -17,7 +17,16 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
-    'gatsby-transformer-remark'
+    'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `montserrat\: 400,700,900`
+        ],
+        display: 'swap'
+      }
+    }
   ],
   siteMetadata: {
     title: 'Seyi Oluwaleimu',

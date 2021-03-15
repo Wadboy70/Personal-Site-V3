@@ -205,7 +205,7 @@ const GlobalStyle = createGlobalStyle`
     }
     body {
     color: hsla(0, 0%, 0%, 0.8);
-    font-family: sans-serif;
+    font-family: "montserrat", sans-serif;
     font-weight: normal;
     word-wrap: break-word;
     font-kerning: normal;
@@ -218,16 +218,16 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     margin: 0;
     padding: 0;
-    margin-bottom: 1.45rem;
     }
     h1 {
+    text-align: center;
     margin: 0;
     padding: 0;
     margin-bottom: 1.45rem;
     color: inherit;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    font-weight: bold;
+    font-weight: 900;
     text-rendering: optimizeLegibility;
     font-size: 2.25rem;
     line-height: 1.1;

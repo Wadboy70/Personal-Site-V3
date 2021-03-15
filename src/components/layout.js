@@ -5,22 +5,24 @@ import styled from 'styled-components';
 
 const PageContent = styled.section`
     padding: 5%;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+`;
+const Container = styled.div`
+    min-height: 100vh;
 `;
 
 const Layout = ({children}) => {
     return (
-        <div>
+        <Container>
             <GlobalStyle/>
+            <Header/>
             <PageContent>
-                <Header/>
                 {
                     children && children
                 }
             </PageContent>
-        </div>
+        </Container>
     )
 };
 

@@ -3,12 +3,23 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 const HeaderContainer = styled.nav`
-    width: 100%;
+    max-width: 100vw;
     background-color: #FFFFFF;
     height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ul{
+        height: 100%;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 const NavListItem = styled.li`
     margin-right: 1rem;
+    margin-bottom: 0px;
 `;
 const NavLink = styled(Link)`
     color: #999;
