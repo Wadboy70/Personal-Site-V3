@@ -20,7 +20,7 @@ module.exports = {
     'gatsby-transformer-remark'
   ],
   siteMetadata: {
-    title: 'Seyi Oluwaleimu :)',
+    title: 'Seyi Oluwaleimu',
     author: 'Seyi Oluwaleimu'
   }
 }

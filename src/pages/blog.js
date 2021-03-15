@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/layout';
+import ComingSoon from '../components/comingsoon';
 
 
 
@@ -25,7 +26,7 @@ const Blog = () => {
     return(
         <Layout>
             <h1>Blog Page</h1>
-            <ol>
+            {/* <ol>
                 {
                     postInfo.map(md => (
                         <li key = {md.node.frontmatter.title}>
@@ -47,7 +48,8 @@ const Blog = () => {
                         </li>
                     ))
                 }
-            </ol>
+            </ol> */}
+            <ComingSoon/>
         </Layout>
     )
 };
