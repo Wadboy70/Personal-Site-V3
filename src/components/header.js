@@ -1,6 +1,6 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const HeaderContainer = styled.nav`
     width: 100%;
@@ -10,22 +10,28 @@ const HeaderContainer = styled.nav`
 const NavListItem = styled.li`
     margin-right: 1rem;
 `;
+const NavLink = styled(Link)`
+    color: #999;
+    &.activePage{
+        color: black;
+    }
+`;
 
 const Header = () => {
     return (
         <HeaderContainer>
             <ul>
                 <NavListItem>
-                    <Link to = '/'>Home</Link>
+                    <NavLink to = '/' activeClassName = "activePage">Home</NavLink>
                 </NavListItem>
                 <NavListItem>
-                    <Link to = '/blog'>Blog</Link>
+                    <NavLink to = '/blog' activeClassName = "activePage">Blog</NavLink>
                 </NavListItem>
                 <NavListItem>
-                    <Link to = '/about'>About</Link>
+                    <NavLink to = '/about' activeClassName = "activePage">About</NavLink>
                 </NavListItem>
                 <NavListItem>
-                    <Link to = '/projects'>Projects</Link>
+                    <NavLink to = '/projects' activeClassName = "activePage">Projects</NavLink>
                 </NavListItem>
             </ul>
         </HeaderContainer>
