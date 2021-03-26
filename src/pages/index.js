@@ -4,32 +4,32 @@ import styled from 'styled-components';
 import seyi from '../images/Seyi.png';
 import { graphql, useStaticQuery } from "gatsby";
 import StripedBackground from "../components/stripedBackground";
+import Head from '../components/head';
 
 
+const HomeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+`;
+const PictureBox = styled.div`
+  max-height: 70vmin;
+  max-width: 70vmin;
+  img{
+    width: auto;
+    height: auto;
+  }
+`;
+const WordBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
 
+`;
 export default function Home() {
-  const HomeContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-  `;
-  const PictureBox = styled.div`
-    max-height: 70vmin;
-    max-width: 70vmin;
-    img{
-      width: auto;
-      height: auto;
-    }
-  `;
-  const WordBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem;
-
-  `;
   const data = useStaticQuery(graphql`
     query {
       site{
@@ -43,6 +43,7 @@ export default function Home() {
   
   return (
     <Layout>
+      <Head pageName = "Home"/>
       <StripedBackground/>
       <HomeContainer>
         <h1 className="title">{ data.site.siteMetadata.title }</h1>

@@ -1,54 +1,56 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import ComingSoon from '../components/comingsoon';
+import Head from '../components/head';
 
 
 
 const Blog = () => {
     const data = useStaticQuery(graphql`
-        query {
-            allMarkdownRemark {
-                edges {
-                    node {
-                        frontmatter {
-                            title
-                            date
-                        }
-                        excerpt
+        query{
+            allContentfulBlogPost(
+                sort:{
+                    fields: publishedDate,
+                    order: DESC
+                }
+            ){
+                edges{
+                    node{
+                        slug,
+                        title,
+                        publishedDate(formatString: "MMMM Do YYYY")
                     }
                 }
             }
         }
     `);
-    const postInfo = data?.allMarkdownRemark?.edges; 
+    const postInfo = data?.allContentfulBlogPost?.edges; 
     return(
         <Layout>
+            <Head pageName = 'Blog'/>
             <h1>Blog Page</h1>
-            {/* <ol>
+            <ol>
                 {
                     postInfo.map(md => (
-                        <li key = {md.node.frontmatter.title}>
-                            <h2>
-                                {
-                                    md.node.frontmatter.title
-                                }
-                            </h2>
-                            <h3>
-                                {
-                                    md.node.frontmatter.date
-                                }
-                            </h3>
-                            <p>
-                                {
-                                    md.node.excerpt
-                                }
-                            </p>
+                        <li key = {md.node.title}>
+                            <Link to = {md.node.slug}>
+                                <h2>
+                                    {
+                                        md.node.title
+                                    }
+                                </h2>
+                                <h3>
+                                    {
+                                        md.node.date
+                                    }
+                                </h3>
+                            </Link>
                         </li>
                     ))
                 }
-            </ol> */}
+            </ol>
             <ComingSoon/>
         </Layout>
     )

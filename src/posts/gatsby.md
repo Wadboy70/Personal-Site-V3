@@ -5,6 +5,8 @@ date: "2020-03-11"
 
 I just launched ya mama
 
+![Seyi](../images/Seyi.png)
+
 ## Topics covered
 
 1. yo mama
